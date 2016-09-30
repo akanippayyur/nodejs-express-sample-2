@@ -1,0 +1,27 @@
+{
+  "name": "nodejs-express-sample-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "DEBUG=express:* node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "helmet": "^2.2.0",
+    "morgan": "^1.7.0",
+    "nodemon": "^1.10.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akanippayyur/nodejs-express-sample-2.git"
+  },
+  "author": "Anoop Kanippayyur",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akanippayyur/nodejs-express-sample-2/issues"
+  },
+  "homepage": "https://github.com/akanippayyur/nodejs-express-sample-2#readme"
+}
