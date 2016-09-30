@@ -1,24 +1,57 @@
+
+
+<html>
+
 <title>Hello World!!</title>
 <head>
   <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-</head>
-<script>
 
+<script>
 $(document).ready(function() {
-  $.ajax({
-    type: "POST",
-      url: '/POSTREQUEST',
-    //  dataType: "jsonp",
-    //  jsonpCallback: "_testcb",
-      cache: false,
-      timeout: 5000,
-      success: function(data) {
-          console.log(data);
-      },
-      error: function(jqXHR, textStatus, errorThrown) {
-          alert('error ' + textStatus + " " + errorThrown);
-      }
+  $("#POSTREQUEST").click(function() {
+    // OPTION #1
+    // Window.location.href will support only a GET request.
+    //window.location.href = "/POSTREQUEST";
+
+// OPTION #2 HTML Form submit
+ $("#var1").val('ABC');
+$("#var2").val('CDE');
+$("#form").submit(); 
+
+  // OPTION #3
+  // Display the content within the same page without redirection.
+/*   $.ajax({
+      type: "POST",
+      async:false,
+        url: '/POSTREQUEST',
+      //  dataType: "jsonp",
+      //  jsonpCallback: "_testcb",
+        dataType: "html",
+        cache: false,
+        timeout: 5000,
+        success: function(data) {
+            $("#displayhere").html(data);
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            alert('error ' + textStatus + " " + errorThrown);
+        }
+    }); */
   });
+
+
 });
 
 </script>
+</head>
+<body>
+
+  <form style="display: hidden" action="/POSTREQUEST" method="POST" id="form">
+    <input type="hidden" id="var1" name="var1" value=""/>
+    <input type="hidden" id="var2" name="var2" value=""/>
+  </form>
+
+  <input type="button" id="POSTREQUEST" name="POSTREQUEST" value="POSTREQUEST"/>
+
+<span id="displayhere"/>
+</body>
+</html>
